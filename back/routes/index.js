@@ -1,7 +1,14 @@
 
-const playlist = require("./playlist/playlist")
-const track = require("./track/track")
+const spectacle = require("./spectacle/spectacle")
 
+const representation =require("./representations/representations")
 
+const team =require("./team/team")
 
-module.exports = { playlist, track}
+const image =require("./pictures/pictures")
+
+const sujet =require("./subject/subject")
+
+const messages =require("./messages/messages")
+
+module.exports = {spectacle, representation, team, image, sujet, messages}

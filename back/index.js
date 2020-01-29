@@ -2,7 +2,6 @@ const express = require('express');
 const morgan = require('morgan')
 const app = express();
 const port = 4000;
-const connection = require('./conf');
 const bodyParser = require('body-parser');
 const route = require("./routes/index")
 
@@ -15,12 +14,20 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use("/playlist", route.playlist)
+app.use("/spectacle", route.spectacle)
 
-app.use("/track", route.track)
+app.use("/representation", route.representation)
+
+app.use("/team", route.team)
+
+app.use("/image", route.image)
+
+app.use("/sujet", route.sujet)
+
+app.use("/messages", route.messages)
 
 app.get('/', (req, res) => {
-    res.send("Bienvenue chez musicman").status(200)
+    res.send("Bienvenue chez Wild circus").status(200)
 })
 
 
