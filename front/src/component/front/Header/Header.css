@@ -1,0 +1,21 @@
+.Head {
+    color: red;
+    
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 0.2em;
+    margin-right: 1em;
+    justify-content: space-around;
+
+}
+menu,a{
+    margin-left: 5px;
+    color:red;
+}
+.logo{
+    margin-left: 0em;
+    margin-right: 1em;
+}

@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import Accueil from './component/front/Accueil/Accueil'
+
+import Representations from './component/front/Pages/Representations'
+import Prix from './component/front/Pages/Prix/Prix'
+import Photographies from './component/front/Pages/Photographies/Photographies'
+import Equipe from './component/front/Pages/Equipe/Equipe';
+import AccueilAdmin from './component/admin/pages/AccueilAdmin'
+import { Switch, Route } from 'react-router-dom'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <>
+
+      <Switch>
+        <Route exact path="/" component={Accueil} />
+        <Route path="/representation" component={Representations} />
+        <Route path="/prix" component={Prix} />
+        <Route path="/photographies" component={Photographies} />
+        <Route path="/equipe" component={Equipe} />
+        <Route path="/admin" component={AccueilAdmin} />
+      </Switch>
+      
+    </>
   );
 }
 
