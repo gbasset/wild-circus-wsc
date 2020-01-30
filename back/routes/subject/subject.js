@@ -19,6 +19,18 @@ router.get('/all', (req, res) => {
         }
     });
 })
+/////////////// recuperer les messages selon l'objet de celui ci /////////
+router.route(['mailbysubject/:id', '/'])
+.get(function (req, res) {
+  connection.query(`SELECT object_name, subjetct_id, m.message_objet_id, m.message_date, m.message_id, m.message_client_name,	m.message_client_lastname, m.message_client_phone, m.message_client_mail,message_message FROM subject JOIN messages AS m on m.message_objet_id=subjetct_id
+  WHERE subjetct_id=${req.params.id} ORDER BY m.message_date ASC `, (err, results) => {
+    if (err) {
+      res.status(500).send("Erreur lors de la récupération d'un sujet");
+    } else {
+      res.json(results).status(200);
+    }
+  });
+})
 
 router.route(['/:id', '/'])
 .get(function (req, res) {
