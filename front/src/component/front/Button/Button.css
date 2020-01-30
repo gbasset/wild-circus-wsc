@@ -10,11 +10,10 @@ input[type=button], input[type=submit], input[type=reset], button, .button {
 	background: -moz-linear-gradient(top, #000000 0%, #000000 100%);
 	background: -webkit-linear-gradient(top, #000000 0%, #000000 100%);
 	background: -o-linear-gradient(top, #000000 0%, #000000 100%);
-	border: 1px solid #ffffff;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-o-border-radius: 5px;
+	border-radius: 1px;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	-o-border-radius: 1px;
 	box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(187, 173, 173, 0.25);
 	-moz-box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
 	-webkit-box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
@@ -32,6 +31,3 @@ input:hover {
 }
 
 
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active, button:active, .button:active{
-	opacity:0.8;
-}
