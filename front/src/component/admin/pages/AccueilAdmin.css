@@ -1,0 +1,11 @@
+.admin-container {
+    margin: 3.2em 0em;
+  }
+
+  @media only screen and (max-width: 530px) {
+    .admin-container {
+        margin: 5em 0em;
+      }
+
+
+}
