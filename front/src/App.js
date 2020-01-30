@@ -1,5 +1,5 @@
 import React from 'react';
-import Accueil from './component/front/Accueil/Accueil'
+import Accueil from './component/front/Pages/Accueil/Accueil'
 
 import Representations from './component/front/Pages/Representations'
 import Prix from './component/front/Pages/Prix/Prix'
@@ -22,7 +22,7 @@ function App() {
         <Route path="/equipe" component={Equipe} />
         <Route path="/admin" component={AccueilAdmin} />
       </Switch>
-      
+
     </>
   );
 }

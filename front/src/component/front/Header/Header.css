@@ -1,21 +1,55 @@
 .Head {
     color: red;
-    
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    max-height: 9vh;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    padding-top: 0.6em;
+    padding-bottom: 0em;
+    z-index: 100;
+    opacity: 0.9;
+    box-shadow: 4px 7px 13px rgba(0, 0, 0, 0.061);
 }
+
 .menu {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 0.2em;
-    margin-right: 1em;
-    justify-content: space-around;
+    margin-left: 0.5em;
+    margin-right: 5vh;
+    justify-content: space-between;
+    line-height: 1.5;
+}
 
+menu, a {
+    margin-left: 1.5px;
+    color: red;
+    font-weight: bold;
 }
-menu,a{
-    margin-left: 5px;
-    color:red;
+
+.link {
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.5) 0%, rgb(248, 0, 0) 10%, transparent 10.01%) no-repeat bottom / 0 100%;
+    transition: background-size .5s;
 }
-.logo{
+
+.link:hover {
+    background-size: 100% 100%;
+}
+
+.logo {
     margin-left: 0em;
     margin-right: 1em;
+}
+
+.logo, img {
+    width: 40px;
+}
+
+.AdminLink {
+    margin-right: 0em;
+    margin-left: 0.2em;
 }
