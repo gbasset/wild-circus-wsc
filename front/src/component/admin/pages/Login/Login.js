@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect }  from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import './Login.css'
 export default function Login() {
@@ -9,7 +9,7 @@ export default function Login() {
         user_email: null,
     })
 
-   const  handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         axios.post("/authentification", {
             email: user.user_email,
             password: user.user_pass
@@ -18,25 +18,25 @@ export default function Login() {
             localStorage.setItem('token', res.headers.token) // requireAuth et notNoth
             console.log('resheader', res.headers);
             document.location.reload(true);
-            
+
         })
         e.preventDefault();
-       
+
     }
 
     const updateForm = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value })
     }
 
-  
+
     return (
-        <>
-            <form >
+        <div className="form-container">
+                <form className="formLogin" >
                 <div className="form-group">
                     <label for="exampleInputEmail1">Login</label>
                     <input
-                    onChange={updateForm}
-                    name="user_email"
+                        onChange={updateForm}
+                        name="user_email"
                         type="text"
                         class="form-control"
                         id="exampleInputEmail1"
@@ -53,7 +53,7 @@ export default function Login() {
                 <div className="form-group">
                     <label for="exampleInputPassword1">Mot de passe</label>
                     <input
-                    onChange={updateForm}
+                        onChange={updateForm}
                         name="user_pass"
                         type="password"
                         className="form-control"
@@ -67,7 +67,7 @@ export default function Login() {
                 <div>
 
                     <button
-                    onClick={handleSubmit}
+                        onClick={handleSubmit}
                         type="submit"
                         className="btn "
 
@@ -77,7 +77,8 @@ export default function Login() {
                 </div>
 
             </form>
-        </>
+        </div>
+        
     )
 }
 

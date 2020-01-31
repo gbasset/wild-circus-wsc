@@ -9,7 +9,7 @@ const [subject2, setSubject2] = useState(props.data)
       
     return (
         <>
-        <form>
+        <form className="reservation">
             <input type="text" />
 
             <label htmlFor="sujet">sujet</label>

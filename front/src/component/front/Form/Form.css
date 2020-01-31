@@ -1,0 +1,51 @@
+.reservation  {
+    background-color: #ced6e0;
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+    max-width: 291px;
+    max-height:450px;
+    padding: 15px 35px 45px;
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 22% 23% 22% 25%;
+    box-shadow:2px 9px 13px 4px rgba(85, 81, 81, 0.404);
+}
+
+input {
+    background-color: #ff6348;
+    color: rgb(0, 0, 0);
+    border: 1px black;
+    height: 3em;
+    padding: auto;
+    text-align: center;
+}
+
+input[type="text"] {
+    margin: 0.5em auto;
+}
+
+input[type="password"] {
+    margin: 0.5em auto;
+}
+
+input[type="email"] {
+    margin: 0.5em auto;
+}
+
+input[type="submit"] {
+    width: 10em;
+    margin: 0.4em auto;
+    border-radius: 0 30% 4%;
+    font-weight: bold;
+    color: white;
+    padding: auto 0.5em;
+    box-shadow: 1px 2px 2px 2px rgba(148, 148, 148, 0.404);
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: white;
+    opacity: 1;
+    font-weight: 300;
+}
