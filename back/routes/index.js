@@ -11,4 +11,9 @@ const sujet =require("./subject/subject")
 
 const messages =require("./messages/messages")
 
-module.exports = {spectacle, representation, team, image, sujet, messages}
+const authentification =require("./authentification/authentification")
+
+
+const user =require("./register/register")
+
+module.exports = {spectacle, representation, team, image, sujet, messages,authentification, user}
