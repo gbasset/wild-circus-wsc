@@ -1,6 +1,6 @@
 .Head {
-    color: red;
-    background-color: rgb(0, 0, 0);
+    color: #ff6348;
+    background-color: #2f3542(0, 0, 0);
     top: 0;
     left: 0;
     right: 0;
@@ -13,7 +13,6 @@
     padding-bottom: 0em;
     z-index: 100;
     opacity: 0.7;
-    box-shadow: 4px 7px 13px rgba(0, 0, 0, 0.061);
 }
 
 .menu {

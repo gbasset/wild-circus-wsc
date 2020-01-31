@@ -10,7 +10,7 @@ const [subject2, setSubject2] = useState(props.data)
     return (
         <>
         <form>
-            <input type="text" value="zizi"/>
+            <input type="text" />
 
             <label htmlFor="sujet">sujet</label>
             <select

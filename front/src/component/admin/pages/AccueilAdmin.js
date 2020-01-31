@@ -1,16 +1,18 @@
 import React from 'react'
 import Header from '../../../component/front/Header/Header'
+import Login from '../../admin/pages/Login/Login'
 import './AccueilAdmin.css'
+import HeaderAdmin from '../HeaderAdmin/HeaderAdmin'
+import { Switch, Route } from "react-router-dom";
+
 export default function Equipe() {
     return (
         <>
-        <Header/>
-        <div className="admin-container">
-            <div className="">
-                <p> Je suis la route Admin </p>
-            </div>
+            <HeaderAdmin />
+            <div className="admin-container">
+                <p style={{color:'red'}}> je suis un text</p>
 
-        </div>
+            </div>
 
         </>
     )

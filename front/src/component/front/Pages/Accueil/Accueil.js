@@ -37,7 +37,6 @@ const [subject, setSubject] = useState([])
                 <div className="body">
                 <ButtonRepresentation/>
 
-
                 </div>
             </div>
             <Form data={subject}/>

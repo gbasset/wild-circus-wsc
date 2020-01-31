@@ -1,0 +1,25 @@
+form{
+margin-top: 80%;
+}
+
+.form-control{
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+.btn{
+    display: flex;
+    margin: auto;
+    margin-top: 2em;
+}
+#emailHelp{
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top:0.5em;
+    text-align: center;
+    color: red;
+
+}
+button{
+}

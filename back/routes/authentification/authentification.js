@@ -35,15 +35,22 @@ router.post('/', (req, res)=>{
    */
 
   connection.query(`SELECT * FROM user WHERE user_email = ?`, email, (err, result)=>{
+      console.log(email,password);
+      
     if (err) {
       return res.status(500).send(err)
-    } else if (!result[0]){ // on verifie la presnec d'un resultat dans la reponse
+    } else if (!result[0]){ // on verifie la presence d'un resultat dans la reponse
       return res.status(409).send('Unknown user') // si pas de resultat l'email n'est pas enregistre en base donc l'utilisateur est inconnu
     }
     /**
      * Test du mot de passe envoye.
      */
-    const passwordIsValid = bcrypt.compareSync(password, result[0].password); // comparaison entre le mot de passe envoye et le hash suvegarde en base grace a compareSync de bcrypt
+
+     console.log(password);
+     
+    const passwordIsValid = bcrypt.compareSync(password, result[0].user_pass); // comparaison entre le mot de passe envoye et le hash suvegarde en base grace a compareSync de bcrypt
+    console.log(passwordIsValid);
+    
     if (!passwordIsValid){
       return res.status(401).send({ auth: false, token: null }); // Si passwordValid est false le mot de passe est faux, on renvoie donc une 401 
     }
@@ -61,7 +68,7 @@ router.post('/', (req, res)=>{
       { algorithm: 'RS256' }// specifie l'algorithme de chiffrage utilise
     );
     res.header("Access-Control-Expose-Headers", "x-access-token") // On crer le header de la reponse
-    res.set("x-access-token", token) // on ajoute le token au header
+    res.set("token", token) // on ajoute le token au header
     res.status(200).send({ auth: true }) // on envoie la reponse
   });
 })
