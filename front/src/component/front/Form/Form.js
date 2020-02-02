@@ -3,7 +3,7 @@ import axios from "axios";
 import './Form.css'
 import { Link } from 'react-router-dom';
 
-export default function Form(props) {
+export default function Form() {
   let getDate = (separator='-') => {
 
     let newDate = new Date()
@@ -16,8 +16,10 @@ export default function Form(props) {
   let date = getDate();
 
   console.log('date', date);
-
-  const [subject2, setSubject2] = useState(props.data)
+  const [subject, setSubject] = useState()
+  let [subject2, setSubject2] = useState();
+  console.log('sub2',subject2);
+  
   const [msg, setMsg] = useState({
     message_client_name : "",
     message_client_lastname: "",
@@ -27,29 +29,45 @@ export default function Form(props) {
     message_objet_id: 3,
     message_date: date,
 
-
   })
 
-   
-    const handleSubmit = (e) => {
+  const fetchDataSujet= () => {
+    axios
+        .get("/sujet/all") //liste les commandes
+        .then(res => {
+            setSubject(res.data)
+        })
+}
+    const handleSubmit = e => {
+      e.preventDefault()
       axios.post("/messages/",msg)
       .then(res => {
         if (res.err) {
           alert(res.err);
-        } else {
+        } else 
           alert(`${msg.message_client_name} votre message a été envoyé avec succès`)
-        }
       })
-
-      e.preventDefault();
-
-  }
+    }
 
   const updateMsg = (e) => {
       setMsg({ ...msg, [e.target.name]: e.target.value })
   }
-  useEffect(() => {
 
+
+  // const chooseSubject= (e) => {
+  //   // création d'une variable qui vas filtrer datacollection pour transformer collection name en collection id
+  //   let subject = subject2.filter(sub => sub.category_name.toUpperCase() === e.target.value.toUpperCase())
+  //   let newCategorieId = newCategorie[0].category_id
+  //   setProductModify({ ...productModify, [e.target.name]: e.target.value })
+  //   console.log('newcollection', newCategorie);
+  //   console.log('-------');
+  //   console.log('e target', e.target.value);
+  //   console.log('newcollectionid', newCategorieId);
+  //   setProductModify({ ...productModify, product_category_id: newCategorieId })
+  // }
+
+  useEffect(() => {
+    fetchDataSujet()
   }, [])
   return (
     <>
@@ -63,9 +81,9 @@ export default function Form(props) {
 
         >
 
-          {props.data &&
-            props.data.map(data => {
-              return <option>{data.object_name} </option>;
+          {subject &&
+            subject.map(data2 => {
+              return <option>{data2.object_name} </option>;
             })}
 
         </select>

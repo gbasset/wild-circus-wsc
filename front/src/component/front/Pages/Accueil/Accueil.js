@@ -6,7 +6,7 @@ import './Accueil.css'
 import ButtonRepresentation from '../../Button/ButtonRepresentation'
 export default function Accueil() {
 const [pictures, setPictures] = useState([])
-const [subject, setSubject] = useState([])
+
     const fetchData = () => {
         axios
             .get("/image/all") //liste les commandes
@@ -14,19 +14,13 @@ const [subject, setSubject] = useState([])
                 setPictures(res.data)
             })
     }
-    const fetchDataSujet= () => {
-        axios
-            .get("/sujet/all") //liste les commandes
-            .then(res => {
-                setSubject(res.data)
-            })
-    }
+
     useEffect(() => {
         fetchData()
-        fetchDataSujet()
+       
       }, [])
       console.log('pictures', pictures);
-      console.log('sujet', subject);
+   
       
     return (
         <>
@@ -39,7 +33,7 @@ const [subject, setSubject] = useState([])
 
                 </div>
             </div>
-            <Form data={subject}/>
+            <Form />
 
             </div>
 
