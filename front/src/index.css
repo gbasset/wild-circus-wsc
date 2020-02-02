@@ -1,0 +1,9 @@
+.footer {
+    
+    background-color:  rgba(164, 176, 190,1.0);;
+    height: 15vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }

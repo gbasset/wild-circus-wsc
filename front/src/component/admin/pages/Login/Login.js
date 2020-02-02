@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import './Login.css'
 import Header from '../../../front/Header/Header'
+import Footer from '../../../front/Footer/Footer'
 export default function Login() {
 
     const [user, setUser] = useState({
@@ -87,6 +88,7 @@ export default function Login() {
 
                 </form>
             </div>
+            <Footer/>
         </>
 
     )

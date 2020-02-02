@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../../Header/Header'
+import Footer from '../../Footer/Footer'
 import './Equipe.css'
 export default function Equipe() {
     return (
@@ -10,7 +11,7 @@ export default function Equipe() {
                 <p> Je suis la route Equipe</p>
             </div>
         </div>
-
+<Footer/>
         </>
     )
 }

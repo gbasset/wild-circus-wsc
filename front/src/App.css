@@ -1,14 +1,17 @@
 body, html {
-    margin: 0;
-    font-family: 'Noto Sans JP', sans-serif;
-    background-color: #2f3542;
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: rgba(87, 96, 111, 1.0);
+  color: rgb(102, 106, 110);
 }
 
 p {
-    text-align: justify;
-    line-height: 2em;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+  text-align: justify;
+  line-height: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+

@@ -22,11 +22,11 @@ function App() {
 
       <Switch>
         <Route exact path="/" component={Accueil} />
-        <Route  path="/representation" component={Representations} />
+        <Route path="/representation" component={Representations} />
         <Route path="/prix" component={Prix} />
         <Route path="/photographies" component={Photographies} />
         <Route path="/equipe" component={Equipe} />
-        <Route path="/login" component={requireNotAuth(Login)}/> 
+        <Route path="/login" component={requireNotAuth(Login)} />
         <Route path="/admin" component={requireAuth(AccueilAdmin)} />
         <Route path="/equipeadmin" component={requireAuth(ViewEquipe)} />
         <Route path="/representationadmin" component={requireAuth(RepresentationsAdmin)} />

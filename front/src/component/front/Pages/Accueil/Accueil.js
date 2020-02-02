@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Header from '../../Header/Header'
 import Form from '../../Form/Form'
+import Footer from '../../Footer/Footer'
 import './Accueil.css'
 import ButtonRepresentation from '../../Button/ButtonRepresentation'
 export default function Accueil() {
@@ -36,6 +37,7 @@ const [pictures, setPictures] = useState([])
             <Form />
 
             </div>
+            <Footer className="Footer"/>
 
         </>
     )

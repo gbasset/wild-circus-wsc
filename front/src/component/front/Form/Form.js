@@ -41,6 +41,7 @@ export default function Form() {
     axios.post("/messages/", msg)
       .then(res => {
         alert(`${msg.message_client_name} votre message a été envoyé avec succès`)
+        document.location.reload(true);
       })
       .catch(err => { alert(`${err} Une erreur est survenue`) })
   }
@@ -51,7 +52,6 @@ export default function Form() {
 
 
   const chooseSubject = (e) => {
-    // création d'une variable qui vas filtrer datacollection pour transformer collection name en collection id
     let subjectNew = subject.filter(sub => sub.object_name === e.target.value)
     console.log('subjectNew', subjectNew);
     let newSubjectId = subjectNew[0].subjetct_id

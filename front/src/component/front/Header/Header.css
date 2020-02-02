@@ -1,5 +1,5 @@
 .Head {
-    color: rgb(235, 243, 251);;
+    color: rgb(235, 243, 251);
     background-color: #2f3542(0, 0, 0);
     top: 0;
     left: 0;
@@ -33,10 +33,13 @@ menu, a {
 
 .link {
     background: linear-gradient(to top, rgba(255, 127, 80,1.0) 0%,rgba(255, 127, 80,1.0) 10%, transparent 10.01%) no-repeat bottom / 0 100%;
+    
     transition: background-size .5s;
 }
 
 .link:hover {
+    color: rgba(255, 127, 80,1.0);
+    transition: background-size .9s;
     background-size: 100% 100%;
 }
 

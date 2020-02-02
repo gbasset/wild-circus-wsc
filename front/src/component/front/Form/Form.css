@@ -3,15 +3,16 @@
     display:flex;
     text-align: center;
     flex-direction: column;
-    max-width: 60%;
-    max-height:450px;
+    max-width: 70%;
+    max-height:500px;
     margin: auto;
-    margin-top:0.2em;
+    margin-top:0.4em;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow:0px 1px 4px 3px rgba(164, 176, 190,1.0);
 }
 
 .inputForm {
+    font-size: 1em;
     background-color:rgba(223, 228, 234,1.0);
     color: rgb(0, 0, 0);
     border: 1px black;
@@ -23,6 +24,7 @@
     text-align: center;
 }
 .select{
+    font-size: 1em;
     height: 2em;
     text-align: center;
     margin: 1.8em auto;
@@ -36,6 +38,7 @@
     background-color: #ffffff;
  }
  .textArea{
+    font-size: 1em;
     width: 60%;
     margin:auto;
     background-color:rgba(223, 228, 234,1.0);
