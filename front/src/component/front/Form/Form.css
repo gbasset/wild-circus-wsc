@@ -3,47 +3,60 @@
     display:flex;
     text-align: center;
     flex-direction: column;
-    max-width: 291px;
+    max-width: 60%;
     max-height:450px;
     margin: auto;
+    margin-top:0.2em;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow:2px 9px 13px 4px rgba(85, 81, 81, 0.404);
+    box-shadow:0px 1px 4px 3px rgba(164, 176, 190,1.0);
 }
 
-input {
-    background-color: #ff6348;
+.inputForm {
+    background-color:rgba(223, 228, 234,1.0);
     color: rgb(0, 0, 0);
     border: 1px black;
-    height: 3em;
+    height: 1.8em;
+    width: 60%;
+    margin:auto;
+    margin-bottom: 1.5em;
     padding: auto;
     text-align: center;
 }
-/* 
-input[type="text"] {
-    margin: 0.5em auto;
+.select{
+    height: 2em;
+    text-align: center;
+    margin: 1.8em auto;
+    margin-top:0.2em;
+    width: 60%;
+    background-color:rgba(223, 228, 234,1.0);
 }
+.inputForm:focus{
+    width: 60%;
+    border: 2.5px solid #ced6e0;
+    background-color: #ffffff;
+ }
+ .textArea{
+    width: 60%;
+    margin:auto;
+    background-color:rgba(223, 228, 234,1.0);
+    margin-bottom: 1em ;
+    text-align: center;
+ }
+ .textArea:focus{
+    width: 60%;
+    border: 2.5px solid #ced6e0;
+    background-color: #ffffff;
 
-input[type="password"] {
-    margin: 0.5em auto;
-}
-
-input[type="email"] {
-    margin: 0.5em auto;
-}
-
-input[type="submit"] {
-    width: 10em;
-    margin: 0.4em auto;
-    border-radius: 0 30% 4%;
-    font-weight: bold;
-    color: white;
-    padding: auto 0.5em;
-    box-shadow: 1px 2px 2px 2px rgba(148, 148, 148, 0.404);
-    cursor: pointer;
-}
-
-input::placeholder {
-    color: white;
+ }
+ .btnSendMsg{
+    color:#5c646e;
+    display: flex;
+    margin: auto;
+    margin-bottom: 0.5em;
+    background-color: #ffffff;;
+    padding: 1px 1px;
+    font-size: 1.2em;
     opacity: 1;
-    font-weight: 300;
-} */
+    box-shadow:0px 1px 2px 2px rgba(164, 176, 190,1.0);
+
+}

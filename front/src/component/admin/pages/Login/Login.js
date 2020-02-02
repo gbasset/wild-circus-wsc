@@ -76,7 +76,6 @@ export default function Login() {
                         />
                     </div>
 
-                    <div>
                         <button
                             onClick={handleSubmit}
                             type="submit"
@@ -84,7 +83,7 @@ export default function Login() {
                         >
                             Envoyer
                      </button>
-                    </div>
+                
 
                 </form>
             </div>
