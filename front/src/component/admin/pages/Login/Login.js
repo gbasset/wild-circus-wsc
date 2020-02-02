@@ -18,13 +18,15 @@ export default function Login() {
             .then(res => {
                 console.log(Object.keys(res.headers));
                 localStorage.setItem('token', res.headers.token) // requireAuth et notNoth
-                console.log('resheader', res.headers);
-                alert('Bienvenue parmis nous !')
-                document.location.reload(true);  
+                console.log('resheader', res);
+                alert(`Vous êtes connecté sous le compte admin : ${user.user_email} !`)
+                document.location.reload(true);
             })
             .catch(err => {
-                alert(`Aucun compte ne correspond,veuillez réessayer une autre saisie 
-                                            ou contacter un administrateur`)
+                if (err = 401) {
+                    alert(`Aucun compte ne correspond,veuillez réessayer une autre saisie 
+                    ou contacter un administrateur`)
+                }
             });
 
         e.preventDefault();
