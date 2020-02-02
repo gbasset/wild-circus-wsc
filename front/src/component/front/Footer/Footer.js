@@ -10,10 +10,10 @@ export default function Header() {
 
                 <nav className="footer">
                    
-                  <p><a target="_blank" href="https://www.facebook.com/"  className='logoSocial' > <i class="icon ion-logo-facebook"></i> </a></p> 
-                 <p> <a target="_blank" href="https://www.instagram.com/architeclego/?hl=fr/"  className='logoSocial' > <i class="icon ion-logo-instagram"></i> </a></p> 
-                  <p><a target="_blank" href="https://www.youtube.com/" className='logoSocial' > <i class="icon ion-logo-youtube"></i> </a></p> 
-                  <p><a target="_blank" href="https://www.twitter.com/"  className='logoSocial' > <i class="icon ion-logo-twitter"></i></a> </p>
+                  <a target="_blank" href="https://www.facebook.com/"  className='logoSocial' > <i class="icon ion-logo-facebook"></i> </a>
+                  <a target="_blank" href="https://www.instagram.com/architeclego/?hl=fr/"  className='logoSocial' > <i class="icon ion-logo-instagram"></i> </a>
+                  <a target="_blank" href="https://www.youtube.com/" className='logoSocial' > <i class="icon ion-logo-youtube"></i> </a>
+                  <a target="_blank" href="https://www.twitter.com/"  className='logoSocial' > <i class="icon ion-logo-twitter"></i></a> 
              
                 </nav>
 

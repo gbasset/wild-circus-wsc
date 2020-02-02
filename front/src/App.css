@@ -1,4 +1,6 @@
 body, html {
+  width: 100vw;
+  height: 90vh;
   margin: 0;
   font-family: 'Noto Sans JP', sans-serif;
   background-color: rgba(87, 96, 111, 1.0);
@@ -14,4 +16,3 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
