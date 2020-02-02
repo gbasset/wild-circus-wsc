@@ -9,9 +9,8 @@ const [subject2, setSubject2] = useState(props.data)
       
     return (
         <>
-        <form className="reservation">
-            <input type="text" />
-
+        <form className="formulaireresa">
+            <input type="text" className="inputFormLogin"/>
             <label htmlFor="sujet">sujet</label>
             <select
               className="custom-select text-center"

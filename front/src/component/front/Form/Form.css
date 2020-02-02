@@ -1,14 +1,12 @@
-.reservation  {
+.formulaireresa {
     background-color: #ced6e0;
     display:flex;
     text-align: center;
     flex-direction: column;
     max-width: 291px;
     max-height:450px;
-    padding: 15px 35px 45px;
     margin: auto;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 22% 23% 22% 25%;
     box-shadow:2px 9px 13px 4px rgba(85, 81, 81, 0.404);
 }
 
@@ -20,7 +18,7 @@ input {
     padding: auto;
     text-align: center;
 }
-
+/* 
 input[type="text"] {
     margin: 0.5em auto;
 }
@@ -48,4 +46,4 @@ input::placeholder {
     color: white;
     opacity: 1;
     font-weight: 300;
-}
+} */

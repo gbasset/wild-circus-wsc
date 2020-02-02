@@ -24,7 +24,7 @@ router.post('/', (req, res)=>{
   const emailRegEx= /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
   
   if(!emailRegEx.test(req.body.email)){ //on test l'email fournit avec la regex 'emailRegEx'
-    return res.status(401).send('Unauthorized user')
+    return res.status(401).send('Unauthorized mail')
   }
 
   const email = req.body.email
@@ -47,12 +47,11 @@ router.post('/', (req, res)=>{
      */
 
      console.log(password);
-     
     const passwordIsValid = bcrypt.compareSync(password, result[0].user_pass); // comparaison entre le mot de passe envoye et le hash suvegarde en base grace a compareSync de bcrypt
     console.log(passwordIsValid);
-    
     if (!passwordIsValid){
-      return res.status(401).send({ auth: false, token: null }); // Si passwordValid est false le mot de passe est faux, on renvoie donc une 401 
+      return res.status(401).send({ auth: false, token: null });
+       // Si passwordValid est false le mot de passe est faux, on renvoie donc une 401 
     }
     
     /**

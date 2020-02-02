@@ -2,24 +2,31 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import './Login.css'
+import Header from '../../../front/Header/Header'
 export default function Login() {
 
     const [user, setUser] = useState({
         user_pass: null,
         user_email: null,
     })
-
+    /// https://blog.liplex.de/axios-interceptor-to-refresh-jwt-token-after-expiration/
     const handleSubmit = (e) => {
         axios.post("/authentification", {
             email: user.user_email,
             password: user.user_pass
-        }).then(res => {
-            console.log(Object.keys(res.headers));
-            localStorage.setItem('token', res.headers.token) // requireAuth et notNoth
-            console.log('resheader', res.headers);
-            document.location.reload(true);
-
         })
+            .then(res => {
+                console.log(Object.keys(res.headers));
+                localStorage.setItem('token', res.headers.token) // requireAuth et notNoth
+                console.log('resheader', res.headers);
+                alert('Bienvenue parmis nous !')
+                document.location.reload(true);  
+            })
+            .catch(err => {
+                alert(`Aucun compte ne correspond,veuillez réessayer une autre saisie 
+                                            ou contacter un administrateur`)
+            });
+
         e.preventDefault();
 
     }
@@ -27,58 +34,60 @@ export default function Login() {
     const updateForm = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value })
     }
+    useEffect(() => {
 
+    }, [])
 
     return (
-        <div className="form-container">
+        <>
+            <Header />
+            <div className="form-container">
                 <form className="formLogin" >
-                <div className="form-group">
-                    <label for="exampleInputEmail1">Login</label>
-                    <input
-                        onChange={updateForm}
-                        name="user_email"
-                        type="text"
-                        class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                        placeholder="Login"
-                        value={user.user_login}
-                    />
-                    <small id="emailHelp" className="text-muted">
-                        Nous ne partagerons jamais votre email
+                    <div className="form-group">
+                        <label for="exampleInputEmail1">Login</label>
+                        <input
+                            onChange={updateForm}
+                            name="user_email"
+                            type="text"
+                            className="inputFormLogin"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="Login"
+                            value={user.user_login}
+                        />
+                        <small id="emailHelp" className="text-muted">
+                            Nous ne partagerons jamais votre email
         </small>
 
-                </div>
+                    </div>
 
-                <div className="form-group">
-                    <label for="exampleInputPassword1">Mot de passe</label>
-                    <input
-                        onChange={updateForm}
-                        name="user_pass"
-                        type="password"
-                        className="form-control"
-                        id="exampleInputPassword1"
-                        placeholder="Mot de passe"
-                        value={user.user_pass}
+                    <div className="form-group">
+                        <label for="exampleInputPassword1">Mot de passe</label>
+                        <input
+                            onChange={updateForm}
+                            name="user_pass"
+                            type="password"
+                            className="inputFormLogin"
+                            id="exampleInputPassword1"
+                            placeholder="Mot de passe"
+                            value={user.user_pass}
+                        />
+                    </div>
 
-                    />
-                </div>
+                    <div>
+                        <button
+                            onClick={handleSubmit}
+                            type="submit"
+                            className="btnSend"
+                        >
+                            Envoyer
+                     </button>
+                    </div>
 
-                <div>
+                </form>
+            </div>
+        </>
 
-                    <button
-                        onClick={handleSubmit}
-                        type="submit"
-                        className="btn "
-
-                    >
-                        Envoyer
-        </button>
-                </div>
-
-            </form>
-        </div>
-        
     )
 }
 

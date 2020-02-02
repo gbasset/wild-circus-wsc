@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function ButtoRepresentation() {
     return (
         <>
-           <Link to="/representation" > <input  type="button" value="Voir les représentations"/>  </Link> 
+           <Link to="/representation" > <input  className='butrepre'type="button" value="Voir les représentations"/>  </Link> 
             
         </>
     )
