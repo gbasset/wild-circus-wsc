@@ -1,7 +1,7 @@
 import React from 'react';
 import Accueil from './component/front/Pages/Accueil/Accueil'
 
-import Representations from './component/front/Pages/Representations'
+import Representations from './component/front/Pages/representations/Representations'
 import Prix from './component/front/Pages/Prix/Prix'
 import Photographies from './component/front/Pages/Photographies/Photographies'
 import Equipe from './component/front/Pages/Equipe/Equipe';
