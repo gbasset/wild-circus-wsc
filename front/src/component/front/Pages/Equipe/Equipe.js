@@ -5,13 +5,13 @@ import './Equipe.css'
 export default function Equipe() {
     return (
         <>
-        <Header/>
-        <div className="equipe-container"> 
-            <div className="">
-                <p> Je suis la route Equipe</p>
+            <Header />
+            <div className="equipe-container">
+                <div className="">
+                    <p> Je suis la route Equipe</p>
+                </div>
             </div>
-        </div>
-<Footer/>
+            <Footer />
         </>
     )
 }
