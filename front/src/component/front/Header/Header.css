@@ -44,11 +44,12 @@ menu, a {
 }
 
 .logo {
+    width: 40px;
     margin-left: 0em;
     margin-right: 1em;
 }
 
-.logochap {
+.logochap,.logo {
     width: 40px;
 }
 
