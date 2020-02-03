@@ -7,6 +7,7 @@ body, html {
   color: rgb(57, 58, 59);
   opacity: 0.5em;
 }
+h1{ text-align: center;}
 .Head{
   font-family: 'Noto Sans JP', sans-serif;
   background-color: rgba(87, 96, 111, 0.575);

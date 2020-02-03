@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/all', (req, res) => {
-    connection.query(`SELECT * FROM team`, (err, results) => {
+    connection.query(`SELECT * from team`, (err, results) => {
         if (err) {
             console.log(err);
             console.log(err.sql);
@@ -19,6 +19,19 @@ router.get('/all', (req, res) => {
         }
     });
 })
+router.get('/allpicsbycharacter', (req, res) => {
+  connection.query(`SELECT p.pictures_url, p.pictures_name FROM team  JOIN pictures AS p on p.pictures_user_team_id=team_id`, (err, results) => {
+      if (err) {
+          console.log(err);
+          console.log(err.sql);
+          res.status(500).send('Erreur lors de la récupération des membres de l\'équipe');
+      } else {
+          console.log(results)
+          res.status(200).json(results);
+      }
+  });
+})
+
 
 router.route(['/:id', '/'])
 .get(function (req, res) {

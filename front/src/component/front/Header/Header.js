@@ -8,7 +8,7 @@ export default function Header() {
             <div className="Head">
 
                 <nav className="menu">
-                    <Link to="/" className='logo' > <img src="https://i.postimg.cc/htKwbDHX/logocirque.png"/> </Link>
+                    <Link to="/" className='logo' > <img className="logochap" src="https://i.postimg.cc/htKwbDHX/logocirque.png"/> </Link>
                     <NavLink className='link' to="/representation" activeStyle={{color:"#7bed9f"}} >Représentations</NavLink>
                     <NavLink className='link' to="/prix" activeStyle={{color:"#7bed9f"}}> Prix</NavLink>
                     <NavLink className='link' to="/photographies" activeStyle={{color:"#7bed9f"}}>Photographies</NavLink>

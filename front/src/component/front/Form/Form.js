@@ -53,9 +53,8 @@ export default function Form() {
 
   const chooseSubject = (e) => {
     let subjectNew = subject.filter(sub => sub.object_name === e.target.value)
-    console.log('subjectNew', subjectNew);
-    let newSubjectId = subjectNew[0].subjetct_id
     setMsg({ ...msg, [e.target.name]: e.target.value })
+    let newSubjectId = subjectNew[0].subjetct_id
     setMsg({ ...msg, message_objet_id: newSubjectId })
   }
 
