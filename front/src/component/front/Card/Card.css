@@ -1,4 +1,6 @@
-.cardContainer:hover {}
+.cardContainer {
+  margin-bottom: 3em;
+}
 
 .pseudo {
   text-align: center;
@@ -10,7 +12,7 @@
   min-width: 350px;
   max-width: 450px;
   min-height: 700px;
-  max-height: 9000px;
+  max-height: 1000px;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -67,4 +69,13 @@
 
 .container {
   margin: auto;
+}
+.soumissions{
+  margin: auto;
+}
+.vote{
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top:0.5em;
 }
