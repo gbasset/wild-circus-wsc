@@ -17,10 +17,7 @@ export default function Representations() {
         <>
             <Header />
             <div className="container2">
-                <div className="">
-                    <p> Je suis la route representations</p>
 
-                </div>
                 <CardRepre/>
             </div>
             <Footer />

@@ -36,7 +36,7 @@ export default function Accueil() {
                     <div className="body">
                         <ButtonRepresentation />
                     </div>
-                    <button className="butresa" onClick={toTop}> reserver</button>
+                    <button className="butresa" onClick={toTop}> Aller vers réservation</button>
                 </div>
 
 

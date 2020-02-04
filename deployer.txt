@@ -1,0 +1,258 @@
+                    //////////////////////////////////////////////////////////////////////
+                    ///////////////////// deployer une appli ///////////////////////////
+                    //////////////////////////////////////////////////////////////////////
+
+
+                    VM distante VPS sur OVH avec Ubuntu 18.04 installé dessus 
+                    Pour se connecter on utilise ssh ( secure shell)  
+                    identifiants donnés quand on comande un vps 
+                    ssh root@ ......
+
+                //////////////////////////////////////////////////////////////////////
+                /////////////////////////////UNE FOIS CONNECTE ////////////////////////
+                    //////////////////////////////////////////////////////////////////////
+
+
+        Créer un nouvel utilisateur afin de ne pas tout casser, pour qu'il puisse se connecter en sudo 
+
+
+        ( commandes sur le net pour le shell )
+
+            *CMD      adduser nomduuser
+            *Enter MDP de ce ew user 
+
+        Ensuite il faut l'ajouter au fgroupe sudo 
+
+        usermod -aG Sudo nomdelutilisateur
+
+        exit
+
+                    //////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////// une fois le new user créé//////////////////////////
+                    ///////////////////////////////////////////////////////////////////////////
+
+        retapper le ssh 
+        avec les noms et mdp du nouvel user
+
+
+                //////////////////////////////////////////////////////////////////////
+                /////////////////////////////UNE FOIS CONNECTE ////////////////////////
+                    //////////////////////////////////////////////////////////////////////
+                Installer les logiciels avec les verions de prod identiques à celles de dev
+
+
+                installer ZSH 
+                curl OhMyZsh sh - ............................
+                $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+                installer NVM 
+                curl nvm install ...................................
+
+
+                curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+
+                source.zshr
+
+                installer nginx:
+                sudo apt install nginx
+
+                installer sql :
+                sudo apt install sql 
+                mysql server
+
+
+                installer node sur la machine
+                nvm install 12
+
+                LE SSH fait que une fois deconnecté tout se deconnecte 
+                PM2 process manager gère des processus en dehors des sessions, il permet de lancer des process en dehors des sessions 
+
+                npm i -g pm2
+
+
+                 //////////////////////////////////////////////////////////////////////
+                /////////////////////////////creation du pj ////////////////////////
+                    //////////////////////////////////////////////////////////////////////
+
+                mkdir project
+                project 
+                mkdir nomduprojet 
+                git clone du projet 
+
+                on vas dans master 
+                npm i 
+
+
+                on ajoute le dotenv 
+                cat conf.js -> affiche les besoins du env 
+                vim.env
+                on ouvre avec vim et on ajouter 
+                    DB_HOST=localhost  ou bien l'adresse du serveur de la bdd
+                    DB_USER=root
+                    DB_PASS= le pass
+                    DB_DB=wildcircus
+                    JWT_SECRET=mySecretSalt
+
+
+                
+
+                //////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////
+
+
+                    on installe sudo mysql_secure_installation
+                    mdp pour se connecter à mysql
+                    on prend medium 
+
+                    ensuite on se log à mysql 
+                    mysql -u root -p 
+
+                    CREATE USER 'nomuser@localhost' identified by 'mysqlpassword' qu'on à choisit plus haut
+
+                    on lui ajoute des droits :
+                    GRANT ALL PRIVILEGES ON *.* TO 'nomuser@localhost';
+
+
+                    ensuite on créé la database : 
+                    create database nom_de_la_bdd
+
+                    on quitte  my sql ; 
+
+
+                    ///////////////////////////////////////////////////////////////////////
+                    //////////////////////////////////////////////////////////////////
+                    /////////////////////////////////////////////////////////////////////
+
+                    il faudrait utilise ds variables d'environnement de dev 
+                    pour le localhost des axios vers la bdd par exemple 
+                    (on pourrait faire un fichier qui fait tt les axios et l'appeler via une process.env aussi)
+
+                    dans le env on créé les variables d'envirronement 
+                    REACT_APP_PATH_API= htt//localhost:4000
+
+                    besoins admin :
+                    let path API = process.env.REACT_APP_API_DEV
+                    if (process.env.NODE.ENV === 'production')
+
+                    path Api = process.env.reactREACT_APP_API_PATH_PROD
+                    ensuite dans les axios remplacer localhost par ${pathAPI}
+
+                        depuis le terminal du server
+                    commande scp pour envoyer des fichiers
+
+                        on modifie les fichiers et ensuite on les renvoi
+            scp -r et le nomdudossieradressechemindufichier nomutilisateur du server@ladresseduserveur :~/nomdudossier dans le server ou copier le fichier
+
+            Depuis le server on vas voir dans le dossier ce qu'on a .
+
+/////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+            ensuite depuis le front on créé les clés dans le .env 
+            vim.env
+            REACT_APP_API_PATH_API_DEV=http://localhost...
+            REACT_APP_API_PATH_PROD= .......
+////////////////ensuite pm2 process manager qui permet de lancer des process sans kill ceux ci une fois que l'on se deconnecte///////////////////////////
+
+ensuite pm2 start serverjs
+
+//////console log de la famille 
+pm2 log 0 permet de voir le server qui tourne
+
+
+
+
+                        ////////////////////
+                        On retourne dans le front pour npm i ( si jamais pas fait pour les modules)
+
+                        //////////////////////////////
+                        la CMD mp2 ecosystem 
+                        permet de créé un ecosystem.config.js
+                        vim ecosystem.config.js
+
+                        on peux changer des trucs dedans come script : NPM 
+                        dans args on lui met ce qui arrive derrière npm 
+                        ce qui donne argd :' run start:prod'
+
+                        on vire tout:
+
+                        /////////////////////
+
+                        il faut entrer dans le package json 
+                       
+                        dans la partie script
+                        'start:prod' "npm run build &&./script/serve.sh"
+
+
+                        on retorne dans dossier  front 
+                        au niveau du src je créé le fichier script 
+                        mkdir script 
+                        vim script 
+
+                        on écrit serve -s build ( ce qui permet de faire comme un npm start)
+                        on fait chmod +x serve.sh pour le rendre executable
+vim ecgosystem on renomme ce quon veut comme nom
+
+
+                        //////////// tjr dans le front on installe serve 
+                        npm i -g serve 
+
+
+                        pm2 start 
+                        on voit les serveurs qui tournent 
+
+                        pour stopper un process pm2 stop le numero comme 1
+                        pour en delet un autre pm2 delet le numero comme 1
+
+
+                        pm2 start ecosystem.config.jsil lance le serve
+
+
+                        ///////////////////////////////
+                        pm2 log et le numéro du server permet de voir ce qu'il se passe
+
+
+
+                        //////////////////////////////////////
+                        /////////////// ensuite on vas faire un tour du côté nginx 
+                        ////////////////////////////////////////////////
+
+                            outils qui permet de redistribuer un port vers un autre
+                        on lui donne le nom du server à écouter et celui àrenvoyer
+
+                        sudo vim etc nginx .....
+
+
+on y entre les nom de domaine etc 
+
+/ location / tout ici sera redirigé vers le localhosts 5000
+lsten port 80
+server name adresse name : ip 5454645464654645
+
+
+
+remplir la bdd mysql -u lbe ......<.sql
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import {NavLink, Link } from 'react-router-dom'
 import axios from "axios";
 import '../representations/CardRepre.css'
-
+import ButtonRepresentation from '../../Button/ButtonRepresentation'
 export default function Card(props) {
 
 
@@ -16,9 +17,8 @@ export default function Card(props) {
                 setSpectacleRepres(res.data)
             })
     }
-    console.log('spectacleRepres', spectacleRepres);
 
-    const fetchDataSpec= () => {
+    const fetchDataSpec = () => {
         axios
             .get("/spectacle/4")
             .then(res => {
@@ -30,34 +30,73 @@ export default function Card(props) {
         axios // photos en relation avec le spectacle
             .get(`/image/pictshow/4`)
             .then(res => {
-                setSpectaclePicture(res.data)
-               
-            })}
+                setSpectaclePicture(res.data.slice(2, 5))
+
+            })
+    }
+
 
     useEffect(() => {
         fetchDataSpecRepres()
         fetchDataPicsSpec()
         fetchDataSpec()
     }, [])
-    console.log('spectacle', spectacle);
-    console.log('spectacle.perform_name', spectacle);
+    console.log('spectactePicture', spectaclePicture);
+
     return (
         <>
             <div className="cardContainerRepre">
                 <div className="cardRepre">
-                    <h1 className="nomSpec"> {spectacle.perform_name} </h1>
-                    <p> {spectacle.perform_description} </p>
-                    <p>
-                 {spectacleRepres &&
-                        spectacleRepres.map((date, i) => {
-                            return <> Ville: {date.repre_city} date : {date.repre_date}</>
-                        })}
-                    </p>
-                    
-                </div>
+                    <div className="encartDescription">
+                        <h1 className="nomSpec"> {spectacle.perform_name} </h1>
+                        <div className='containerimagesrepre'>
+                            {spectaclePicture &&
+                                spectaclePicture.map((date, i) => {
+                                    return (<img className="imageSpecRepre" src={date.pictures_url}></img>)
 
-                
+                                })}
+                        </div>
+                        <p className="textspec"> {spectacle.perform_description} </p>
+                    </div>
+                    <table className="tableSpectacle" >
+                        <thead className="tableauHead">
+                            <tr >
+                                <td colspan="2"><h1 className="titretable"> Liste des représentations</h1> </td></tr>
+                            <tr>
+                                <th className="" id="" > Ville  </th>
+                                <th className=" pink bg-lightpink asc" id="order_tracking_number" > date et heures</th>
+                            </tr>
+                        </thead>
+                        {" "}
+                        {spectacleRepres &&
+                            spectacleRepres.map((date, i) => {
+                                return <>
+                                    <tbody>
+                                        <td className="villes" >
+                                            <tr>  {date.repre_city} </tr>
+                                        </td>
+
+                                        <td>
+                                            {date.repre_datetime}
+                                        </td>
+
+                                    </tbody>
+                                </>
+
+                            })}
+                           
+                             <NavLink className='link' to="/"  ><button className="butresa" > reserver</button></NavLink>
+                            
+                    </table>
                 </div>
+                
+
+
+            </div>
+
+
+
+
 
         </>
     )
