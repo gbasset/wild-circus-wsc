@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mar. 04 fév. 2020 à 12:28
+-- Généré le :  mar. 04 fév. 2020 à 12:39
 -- Version du serveur :  8.0.19-0ubuntu0.19.10.3
 -- Version de PHP :  7.2.27-5+ubuntu19.10.1+deb.sury.org+2
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `wildcircus`
+-- Base de données :  `wildcircusnew`
 --
 
 -- --------------------------------------------------------
@@ -33,11 +33,11 @@ CREATE TABLE `messages` (
   `message_objet_id` int NOT NULL,
   `message_client_name` varchar(250) NOT NULL,
   `message_client_lastname` varchar(250) NOT NULL,
-  `message_client_phone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `message_client_mail` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `message_client_phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `message_client_mail` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `message_message` varchar(500) NOT NULL,
   `message_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `messages`
@@ -70,7 +70,7 @@ CREATE TABLE `perform` (
   `perform_id` int NOT NULL,
   `perform_description` text NOT NULL,
   `perform_name` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `perform`
@@ -93,7 +93,7 @@ CREATE TABLE `pictures` (
   `pictures_name` varchar(150) NOT NULL,
   `pictures_perform_id` int DEFAULT NULL,
   `pictures_user_team_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `pictures`
@@ -157,7 +157,7 @@ CREATE TABLE `representation` (
   `repre_show_id` int NOT NULL,
   `repre_city` varchar(250) DEFAULT NULL,
   `repre_datetime` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `representation`
@@ -181,7 +181,7 @@ INSERT INTO `representation` (`repre_id`, `repre_show_id`, `repre_city`, `repre_
 CREATE TABLE `role` (
   `role_id` int NOT NULL,
   `role_name` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `role`
@@ -200,7 +200,7 @@ INSERT INTO `role` (`role_id`, `role_name`) VALUES
 CREATE TABLE `subject` (
   `subjetct_id` int NOT NULL,
   `object_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `subject`
@@ -224,7 +224,7 @@ CREATE TABLE `team` (
   `team_pseudo` varchar(250) NOT NULL,
   `team_role` varchar(250) DEFAULT NULL,
   `team_rank` int DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `team`
@@ -252,12 +252,12 @@ INSERT INTO `team` (`team_id`, `team_name`, `team_lastname`, `team_pseudo`, `tea
 
 CREATE TABLE `user` (
   `user_id` int NOT NULL,
-  `user_name` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `user_lastname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `user_pass` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `user_name` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `user_lastname` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `user_pass` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `user_email` varchar(150) NOT NULL,
   `user_role` int NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `user`
