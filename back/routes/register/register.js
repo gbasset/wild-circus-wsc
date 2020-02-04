@@ -9,6 +9,18 @@ const router = express.Router()
  * Route de register d'un utilisateur
  */
 
+
+router.route(['/all',])
+.get(function (req, res) {
+  connection.query(`SELECT * FROM user`, (err, results) => {
+    if (err) {
+      res.status(500).send("Erreur lors de la récupération des users");
+    } else {
+      res.json(results).status(200);
+    }
+  });
+})
+
 router.post('/', (req,res)=>{
 
   /**

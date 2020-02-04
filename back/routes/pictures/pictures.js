@@ -33,7 +33,7 @@ router.route(['/pictshow/:id', '/'])
 /// ICI route pour récupérer les images relatives à un perso de la team ////
 router.route(['/usershow/:id', '/'])
 .get(function (req, res) {
-  connection.query(`SELECT pictures_id, pictures_url, pictures_name, t.team_id, t.team_name, t.team_lastname, t.team_pseudo, t.team_role FROM pictures JOIN team AS t on t.team_id=pictures_user_team_id WHERE t.team_id=${req.params.id}`, (err, results) => {
+  connection.query(`SELECT pictures_id, pictures_url, pictures_name, t.team_id, t.team_name, t.team_lastname, t.team_pseudo, t.team_role, t.team_rank FROM pictures JOIN team AS t on t.team_id=pictures_user_team_id WHERE t.team_id=${req.params.id}`, (err, results) => {
     if (err) {
       res.status(500).send("Erreur lors de la récupération des images");
     } else {
