@@ -1,0 +1,78 @@
+.cardContainerRepre {
+  margin-bottom: 3em;
+  overflow: hidden;
+}
+
+.nomSpec {
+  text-align: center;
+  margin: auto;
+}
+
+.cardRepre {
+  width: 80%;
+  min-height: 500px;
+  padding: 1em;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  /* 5px rounded corners */
+  background-color: rgba(206, 214, 224, 1.0);
+}
+
+.card:hover {
+  box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.952);
+  transition: 0.3s;
+  border-radius: 5px;
+  /* 5px rounded corners */
+  box-shadow: 0 4px 8px 0 rgba(255, 242, 242, 0.521);
+  border-radius: 50px;
+}
+
+.allPictures {
+  width: 100%;
+  text-align: center;
+  margin-top: 1em;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+
+.photo {
+  width: 100%;
+  height: 350px;
+}
+
+.photo:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.photo2 {
+  width: 140px;
+  height: 100px;
+  margin: auto;
+}
+
+.photo2:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.container {
+  margin: auto;
+}
+
+.soumissions {
+  margin: auto;
+}
+
+.vote {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 0.5em;
+}
