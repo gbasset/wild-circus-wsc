@@ -6,7 +6,7 @@ import Card from '../../Card/Card'
 import './Equipe.css'
 export default function Equipe() {
 
-    const [characters, setCharacters] = useState([])
+    const [characters, setCharacters] = useState()
     const [totalVotes, setTotalVotes] = useState([])
 
     const fetchCharacters = () => {
@@ -20,24 +20,47 @@ export default function Equipe() {
         fetchCharacters()
 
     }, [])
+
+// dès que characters change il re rend 
+    useEffect(() => {
+        GetTotalVotes(characters)
+
+    }, [characters])
+    
+    /// pas de crochets je boucle 
+    /// crochets vides didmount 1 * 
+    /// sinon did update avec ce qui change entre crochets 
+
     const GetTotalVotes = (x) => {
-        let newTab = []
-        if (x.length > 2) {
-            x.map(e => e.team_id)
+        
+    //     if (characters) {
+    //         const newTab=  x.map(e => e.team_rank)
+    //         setTotalVotes(newTab)
+    //     }
+    // } 
+    
+    
+    let newTab = []
+    if(characters){
+        for (let i=0; i<x.length; i++) {
+            newTab.push(x[i].team_rank,x[i].team_id )
+            
         }
         setTotalVotes(newTab)
-        console.log('characters', characters[1].team_id);
-    } 
-        
-        
-        //    let newTab = []
-        // for (let i; i<x.length; i++) {
-            //     newTab.push(x[i].team_rank)
-            // }
-            // setTotalVotes(newTab)
-    
-    console.log('totalvotes', totalVotes);
+    //     console.log('newtab',newTab)
+    //     console.log('characters', characters[1].team_id);
 
+    console.log('totalvotes', totalVotes);
+    }}
+    function compare(x, y) {
+        return y - x;
+    }
+
+    var nombres = totalVotes ;
+    nombres.sort(compare);  
+    console.log('newtablo',nombres.slice(0,5));
+      
+    
     return (
         <>
             <Header />
@@ -48,7 +71,7 @@ export default function Equipe() {
 
 
                 </div>
-                <button onClick={() => GetTotalVotes(characters)}> Clic</button>
+                {/* <button onClick={() => GetTotalVotes(characters)}> Clic</button> */}
 
 
                 <div className="mapcard">
