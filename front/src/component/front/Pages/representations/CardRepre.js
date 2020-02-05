@@ -53,7 +53,6 @@ export default function Card(props) {
                             {spectaclePicture &&
                                 spectaclePicture.map((date, i) => {
                                     return (<img className="imageSpecRepre" src={date.pictures_url}></img>)
-
                                 })}
                         </div>
                         <p className="textspec"> {spectacle.perform_description} </p>
