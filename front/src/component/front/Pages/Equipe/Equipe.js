@@ -33,25 +33,25 @@ export default function Equipe() {
 
     const GetTotalVotes = (x) => {
         
-    //     if (characters) {
-    //         const newTab=  x.map(e => e.team_rank)
-    //         setTotalVotes(newTab)
-    //     }
-    // } 
-    
-    
-    let newTab = []
-    if(characters){
-        for (let i=0; i<x.length; i++) {
-            newTab.push(x[i].team_rank,x[i].team_id )
-            
-        }
-        setTotalVotes(newTab)
+        //     if (characters) {
+            //         const newTab=  x.map(e => e.team_rank)
+            //         setTotalVotes(newTab)
+            //     }
+            // } 
+                   
+            if(characters){
+                let newTab = []
+                for (let i=0; i<x.length; i++) {
+                    newTab.push(x[i].team_rank)  
+                } 
+                setTotalVotes(newTab)      
+                }
     //     console.log('newtab',newTab)
     //     console.log('characters', characters[1].team_id);
 
-    console.log('totalvotes', totalVotes);
-    }}
+}
+
+console.log('totalvotes', totalVotes);
     function compare(x, y) {
         return y - x;
     }

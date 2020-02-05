@@ -70,7 +70,7 @@ export default function Card(props) {
                         {spectacleRepres &&
                             spectacleRepres.map((date, i) => {
                                 return <>
-                                    <tbody>
+                                    <tbody className="tableauBody">
                                         <td className="villes" >
                                             <tr>  {date.repre_city} </tr>
                                         </td>
