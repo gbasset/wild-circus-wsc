@@ -68,7 +68,7 @@ export default function Card(props) {
                         <button style={{ cursor: 'pointer', fontSize: '25px' }} onClick={VotePerso}> Voter pour {props.donnes.team_pseudo} &#x2B50; </button>
                         <div className="soumissions">
 
-                            <button className="vote" onClick={VotePerso}> Soumettre mon vote</button>
+                         
                         </div>
                     </div>
 
