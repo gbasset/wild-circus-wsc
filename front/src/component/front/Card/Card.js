@@ -13,13 +13,14 @@ export default function Card(props) {
             .get(`http://localhost:4000/image/usershow/${props.donnes.team_id}`)
             .then(res => {
                 setCharactersPics(res.data)
+
             })
     }
 
     const VotePerso = () => {
-        console.log('tid', voteCharacter.voteCharacter)
+        VotePlus()
         axios
-            .put(`http://localhost:4000/team/${voteCharacter.voteCharacter.team_id}`, voteCharacter.voteCharacter)
+            .put(`http://localhost:4000/team/${voteCharacter.team_id}`, voteCharacter)
             .then(res => {
                 if (res.err) {
                     alert(res.err);
@@ -28,15 +29,18 @@ export default function Card(props) {
 
                     document.location.reload(true);
                     fetchPics()
+
+
                 }
             })
     }
     let VotePlus = () => {
         let newVoteRank = voteCharacter
-        newVoteRank.team_rank += 1;
+        newVoteRank = newVoteRank.team_rank += 1;
         parseInt(newVoteRank.team_rank)
         setVoteCharacter({ voteCharacter: newVoteRank })
         console.log('voteCharacter', voteCharacter.team_rank);
+
     }
 
 
@@ -61,7 +65,7 @@ export default function Card(props) {
                         <h3><b> {props.donnes.team_name} {props.donnes.team_lastname}</b></h3>
                         <p>Role :  {props.donnes.team_role}</p>
                         <p>Nombre de votes :<span> {props.donnes.team_rank} </span></p>
-                        <button style={{ cursor: 'pointer', fontSize: '25px' }} onClick={VotePlus}> Voter pour {props.donnes.team_pseudo} &#x2B50; </button>
+                        <button style={{ cursor: 'pointer', fontSize: '25px' }} onClick={VotePerso}> Voter pour {props.donnes.team_pseudo} &#x2B50; </button>
                         <div className="soumissions">
 
                             <button className="vote" onClick={VotePerso}> Soumettre mon vote</button>
