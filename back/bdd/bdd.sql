@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mar. 04 fév. 2020 à 12:39
+-- Généré le : jeu. 06 fév. 2020 à 17:52
 -- Version du serveur :  8.0.19-0ubuntu0.19.10.3
--- Version de PHP :  7.2.27-5+ubuntu19.10.1+deb.sury.org+2
+-- Version de PHP : 7.3.11-0ubuntu0.19.10.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `wildcircusnew`
+-- Base de données : `wildcircus`
 --
 
 -- --------------------------------------------------------
@@ -58,7 +58,10 @@ INSERT INTO `messages` (`message_id`, `message_objet_id`, `message_client_name`,
 (19, 2, 'dsqs', 'qds', 'qds', 'dqs', 'dqsdqs', '2020-02-02'),
 (20, 3, '', '', '', '', '', '2020-02-03'),
 (21, 3, '', '', '', '', '', '2020-02-03'),
-(22, 3, '', '', '', '', '', '2020-02-03');
+(22, 3, '', '', '', '', '', '2020-02-03'),
+(23, 3, '', '', '', '', '', '2020-02-05'),
+(24, 3, 'hfdf', 'gdfgdf', 'fkdjdsf3ds3fj', 'bhjsd3df@gmail.com', 'je t\'aime', '2020-02-05'),
+(25, 3, '', '', '', '', '', '2020-02-05');
 
 -- --------------------------------------------------------
 
@@ -77,7 +80,7 @@ CREATE TABLE `perform` (
 --
 
 INSERT INTO `perform` (`perform_id`, `perform_description`, `perform_name`) VALUES
-(4, 'je suis un spetacle de cul', 'spectacle de ouf'),
+(4, 'Le spectacle de fin d’études de la 31e promotion du Cnac est cette année mis en scène par Galapiat Cirque, un peu plus de dix ans après sa fondation dans les couloirs mêmes du Cnac. La compagnie, au fonctionnement joyeusement et farouchement collectif, a acquis depuis ses lettres de noblesse : des spectacles enchanteurs, des tournées à vélo ou en caravanes, des projets de territoire, un solide ancrage en Bretagne, une indubitable reconnaissance professionnelle et publique. La roue tourne, et voilà que les anciens encadrent les nouveaux, pour une création qui combine bascule coréenne, corde lisse, acro-danse, jonglerie, cerceau aérien, mât chinois, corde volante, roue Cyr et trapèze ballant.', '\r\nOn n\'est pas là pour sucer des glaces'),
 (5, 'ceci est un spectacle de merde', ''),
 (7, 'je suis une spectaclette', 'ninini');
 
@@ -100,7 +103,7 @@ CREATE TABLE `pictures` (
 --
 
 INSERT INTO `pictures` (`pictures_id`, `pictures_url`, `pictures_name`, `pictures_perform_id`, `pictures_user_team_id`) VALUES
-(1, 'https://cdn.pixabay.com/photo/2015/02/10/10/59/clown-630883_960_720.jpg', 'piste que cirque', 4, 5),
+(1, 'https://images.unsplash.com/photo-1553004377-62aa53df180f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80', 'piste que cirque', 4, NULL),
 (2, 'https://i.postimg.cc/D07PGZM6/cyrus-crossan-JOtu-J-DZj-Tw-unsplash.jpg', 'photographie de chaise', 4, NULL),
 (3, 'https://i.postimg.cc/652y0wxf/fer-gomez-N-tl1-WQzamk-unsplash.jpg', 'photographie du cirque vue d\'exterieur', 4, NULL),
 (4, 'https://i.postimg.cc/htKwbDHX/logocirque.png', 'logo du cirque', 5, NULL),
@@ -144,7 +147,9 @@ INSERT INTO `pictures` (`pictures_id`, `pictures_url`, `pictures_name`, `picture
 (110, 'https://cdn.pixabay.com/photo/2013/11/01/11/13/dolphin-203875_960_720.jpg', 'dauphin', 4, 14),
 (111, 'https://cdn.pixabay.com/photo/2016/11/29/11/57/animal-1869337_960_720.jpg', 'dauphin', NULL, 14),
 (112, 'https://cdn.pixabay.com/photo/2019/02/17/19/15/sea-4002951_960_720.jpg', 'dolphin', NULL, 14),
-(113, 'https://cdn.pixabay.com/photo/2015/08/25/04/35/dolphin-906176_960_720.jpg', 'dolphin', 4, 14);
+(113, 'https://cdn.pixabay.com/photo/2015/08/25/04/35/dolphin-906176_960_720.jpg', 'dolphin', 4, 14),
+(114, 'https://images.unsplash.com/photo-1501837303764-ada599fdac6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 'chanteuse', NULL, 5),
+(115, '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -231,18 +236,18 @@ CREATE TABLE `team` (
 --
 
 INSERT INTO `team` (`team_id`, `team_name`, `team_lastname`, `team_pseudo`, `team_role`, `team_rank`) VALUES
-(1, 'Jean', 'Berraut', 'Jean Bert', 'clown', 123),
-(2, 'Germain', 'Duchamp', 'Germain', 'Danseur', 202),
-(4, 'Bernadette', 'Lachoux', 'ChiChi', 'Danseuse', NULL),
-(5, 'Lorette', 'Ducasse', 'Ducatesse', 'Troubadourette', 1),
+(1, 'Jean', 'Berraut', 'Jean Bert', 'clown', 126),
+(2, 'Germain', 'Duchamp', 'Germain', 'Danseur', 234),
+(4, 'Bernadette', 'Lachoux', 'ChiChi', 'Danseuse', 10),
+(5, 'Lorette', 'Ducasse', 'Ducatesse', 'Troubadourette', 6),
 (6, 'Henry', 'Delvaux', 'Henry', 'Porteur', 1),
-(7, 'Lorenzo', 'Ducancione', 'Lolo', 'Jongleur', 2),
-(8, 'Kruntenberker', 'Ranker', 'Flamech', 'cracheur de feu', 3),
-(10, 'Gertrude', 'Zinbeketre', 'Zizinette', 'Trapesiste', 2),
+(7, 'Lorenzo', 'Ducancione', 'Lolo', 'Jongleur', 3),
+(8, 'Kruntenberker', 'Ranker', 'Flamech', 'cracheur de feu', 4),
+(10, 'Gertrude', 'Zinbeketre', 'Zizinette', 'Trapesiste', 5),
 (11, 'Mouminou', 'Tigrou', 'Tiger Miaouss', 'Tigre', 1),
-(12, 'Kinzou', 'Lele', 'Kinzou', 'Elephant', 1),
-(13, 'Medor', 'TOuTou', 'Medor', 'chien', 3),
-(14, 'Dolphinus', 'Diln', 'Dolphinou', 'Dauphin', 1);
+(12, 'Kinzou', 'Lele', 'Kinzou', 'Elephant', 5),
+(13, 'Medor', 'TOuTou', 'Medor', 'chien', 5),
+(14, 'Dolphinus', 'Diln', 'Dolphinou', 'Dauphin', 7);
 
 -- --------------------------------------------------------
 
@@ -332,7 +337,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `message_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `message_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT pour la table `perform`
@@ -344,7 +349,7 @@ ALTER TABLE `perform`
 -- AUTO_INCREMENT pour la table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `pictures_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `pictures_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT pour la table `representation`
